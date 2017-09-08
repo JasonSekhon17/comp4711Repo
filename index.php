@@ -1,14 +1,16 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>Lab 01</title>
 	</head>
 	<body>
 		<?php
 		include('Student.php');
 		
+		/* array which holds our student objects */
 		$students = array();
 		
+		/* creating our first student and placing it into our array */
 		$first = new Student();
 		$first->surname = "Doe";
 		$first->first_name = "John";
@@ -19,6 +21,7 @@
 		$first->add_grade(55);
 		$students['j123'] = $first;
 
+		/* creating our second student and placing it into our array */
 		$second = new Student();
 		$second->surname = "Einstein";
 		$second->first_name = "Albert";
@@ -30,6 +33,7 @@
 		$second->add_grade(50);
 		$students['a456'] = $second;
 
+		/* creating our third student and placing it into our array */
 		$third = new Student();
 		$third->surname = "Sekhon";
 		$third->first_name = "Jason";
@@ -38,10 +42,12 @@
 		$third->add_grade(100);
 		$students['j456'] = $third;
 		
-
+		/* sorting our student array */
 		ksort($students);
+
+		/* looping through our student array and printing each students data through toString method */
 		foreach($students as $student)
-		echo $student->toString();
+			echo $student->toString();
 
 		?>
 	</body>
